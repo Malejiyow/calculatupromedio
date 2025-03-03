@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <title>Calculadora de Promedio de Notas | Fácil, Rápido y Preciso</title>
+        <meta name="description" content="Calcula el promedio de tus notas fácilmente con nuestra calculadora avanzada. Ideal para estudiantes de colegio y universidad. Compatible con cualquier sistema de calificación.">
+        <meta name="keywords" content="calculadora de promedio, calcular notas, promedio escolar, notas universitarias, promedio académico, estudiantes, educación, notas, promediar, pasar materia, aprobar, reprobado, calificaciones, notas finales, parcial, nota parcial, universidad, colegio, clase, matermaticas">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Prydox Company">
+        <link rel="canonical" href="https://XXXXX/calculadora-notas">
+    
+       
+        <link rel="stylesheet" href="/CSS/style.css">
+        
+        <link rel="icon" href="/img/logoprydox.jpeg" type="image/x-icon">
+    
+        
+        <meta property="og:title" content="Calculadora de Promedio de Notas | Fácil y Preciso">
+        <meta property="og:description" content="Calcula tu promedio de manera rápida y exacta con nuestra herramienta en línea.">
+        <meta property="og:image" content="https://XXXXX/calculadora-notas/img/logoprydox.jpeg">
+        <meta property="og:url" content="https://XXXXX/calculadora-notas">
+        <meta property="og:type" content="website">
+    
+        
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Calculadora de Promedio de Notas | Fácil y Preciso">
+        <meta name="twitter:description" content="Calcula tu promedio de notas en segundos con nuestra herramienta intuitiva y gratuita.">
+        <meta name="twitter:image" content="https://XXXXX/calculadora-notas/img/logoprydox.jpeg">
+    </head>
+    
+<body>
+    
+    <button id="modo-oscuro" class="modo-oscuro-btn" aria-label="Cambiar tema">🌓</button>
+
+    
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <img src="/img/logoprydox.jpeg" alt="Logo de Prydox Company" class="logo-img" >
+            </div>
+            <h1 class="titulo-principal">Calculadora de Promedio</h1>
+        </div>
+
+        
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span class="menu-toggle-line"></span>
+            <span class="menu-toggle-line"></span>
+            <span class="menu-toggle-line"></span>
+        </button>
+
+        
+        <nav class="nav-menu" aria-label="Menú principal">
+            <ul class="nav-list">
+                
+                <li class="nav-item">
+                    <li class="nav-item"><a href="https://www.prydoxcompany.com/    " class="nav-link">Prydox</a></li>
+                    <button id="configuracion-btn" class="nav-link">
+                        <span class="icono-config">⚙️</span>
+                        <span class="texto-config">Configuración</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main class="main-content">
+        <div class="container">
+            
+            <div class="config-hint">🔍 Puedes personalizar los valores de aprobación en Configuración</div>
+
+            
+            <section id="calculadora" class="seccion-calculadora">
+                <h2 class="seccion-titulo">Calculadora de Promedio</h2>
+                <p class="seccion-parrafo">Ingresa tus calificaciones y porcentajes para calcular tu promedio actual y la nota requerida para aprobar la materia.</p>
+                <form id="form-notas" class="form-notas">
+                    <div id="notas-container" class="notas-container">
+                        
+                        <div class="input-group">
+                            <label for="n1" class="input-label">Nota 1:</label>
+                            <input type="number" id="n1" class="nota" placeholder="Ej: 4.2" min="0" max="5" step="0.1" required>
+                            <span class="etiqueta-movil">Porcentaje</span>
+                            <input type="number" class="porcentaje" placeholder="% (Ej: 30)" min="0" max="100" required>
+                            <span class="etiqueta-movil">%</span>
+                            <button type="button" class="eliminar-nota" aria-label="Eliminar nota">✕</button>
+                        </div>
+                    </div>
+
+                    
+                    <div class="buttons-container">
+                        <button type="button" id="agregar-nota" class="btn btn-primary">➕ Nueva Nota</button>
+                        <button type="button" id="calcular" class="btn btn-primary">📊 Calcular</button>
+                    </div>
+                </form>
+            </section>
+
+            
+            <section class="resultados-container" id="resultados-container">
+                <div class="resultado-box" id="promedio-actual">
+                    <h3 class="resultado-titulo">Promedio Actual</h3>
+                    <p id="promedio-texto" class="resultado-texto">-</p>
+                </div>
+                <div class="resultado-box" id="porcentaje-actual">
+                    <h3 class="resultado-titulo">Porcentaje Acumulado</h3>
+                    <p id="porcentaje-texto" class="resultado-texto">-</p>
+                </div>
+                <div class="resultado-box" id="nota-faltante">
+                    <h3 class="resultado-titulo">Nota Requerida</h3>
+                    <p id="nota-faltante-texto" class="resultado-texto">-</p>
+                </div>
+                <div class="resultado-box" id="porcentaje-faltante">
+                    <h3 class="resultado-titulo">Porcentaje Restante</h3>
+                    <p id="porcentaje-faltante-texto" class="resultado-texto">-</p>
+                </div>
+            </section>
+
+            
+            <div id="mensaje-resultado" class="mensaje-resultado" aria-live="polite"></div>
+
+            
+            <section id="configuracion-rec" class="seccion-configuracion">
+                <h2 class="seccion-titulo">🔧 Configuración del Sistema</h2>
+                <form id="configuracion-form" class="form-configuracion">
+                    <div class="input-group">
+                        <label for="nota-minima" class="input-label">Nota Mínima:</label>
+                        <input type="number" id="nota-minima" class="input-config" min="0" max="10" step="0.1" value="0.0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="nota-maxima" class="input-label">Nota Máxima:</label>
+                        <input type="number" id="nota-maxima" class="input-config" min="0" max="10" step="0.1" value="5.0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="nota-aprobacion" class="input-label">Nota de Aprobación:</label>
+                        <input type="number" id="nota-aprobacion" class="input-config" min="0" max="10" step="0.1" value="3.0" required>
+                    <button type="submit" class="btn btn-primary">💾 Guardar Configuración</button>
+                </div>
+                    
+                </form>
+            </section>
+        </div>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2025 Calculadora de Promedio de notas - v1.0</p>
+            <p class="footer-text">Desarrollado por <a href="https://www.prydoxcompany.com" target="_blank" rel="noopener noreferrer">Prydox Company</a></p>
+            <p class="footer-text">
+                <a href="/HTML/politica-de-privacidad.html">Política de Privacidad</a> | 
+                <a href="/HTML/terminos-y-condiciones.html">Términos y Condiciones</a>
+            </p>
+        </div>
+    </footer>
+
+    
+    <div id="mensaje-guardar" class="mensaje-guardar" aria-live="polite"></div>
+
+    
+    <div id="mensaje-error" class="mensaje-error" aria-live="polite"></div>
+
+    
+    <script src="/JavaScript/jva.js"></script>
+</body>
+</html>
